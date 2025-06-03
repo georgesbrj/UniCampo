@@ -172,7 +172,8 @@ http://localhost:8000/api/documentation
 
 ## Screenshots
  
-![home](https://raw.githubusercontent.com/georgesbrj/UniCampo/main/backend/public/images/home.png)  
-![cadastrar](https://raw.githubusercontent.com/georgesbrj/UniCampo/main/backend/public/images/cadastrar.png)  
-![edit](https://raw.githubusercontent.com/georgesbrj/UniCampo/main/backend/public/images/edit.png)  
-![Documentacao](https://raw.githubusercontent.com/georgesbrj/UniCampo/main/backend/public/images/documentation.png)
+![home](https://raw.githubusercontent.com/georgesbrj/UniCampo/master/backend/public/images/home.png)
+![cadastrar](https://raw.githubusercontent.com/georgesbrj/UniCampo/master/backend/public/images/cadastrar.png)
+![edit](https://raw.githubusercontent.com/georgesbrj/UniCampo/master/backend/public/images/edit.png)
+![Documentacao](https://raw.githubusercontent.com/georgesbrj/UniCampo/master/backend/public/images/documentation.png)
+

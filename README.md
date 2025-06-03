@@ -170,9 +170,11 @@ http://localhost:8000/api/documentation
 
 - Todos os requisitos funcionais e técnicos foram seguidos conforme o documento da avaliação.
 
+## Screenshots
+| Página Inicial | Cadastro |
+|----------------|----------|
+| ![home](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/home.png) | ![cadastrar](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/cadastar.png) |
 
-## Intefaces 
-![home](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/home.png)
-![cadastrar](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/cadastar.png)
-![edit](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/edit.png)
-![Documentacao](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/documentation.png)
+| Edição | Documentação |
+|--------|--------------|
+| ![edit](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/edit.png) | ![Documentacao](https://github.com/georgesbrj/UniCampo/blob/main/backend/public/images/documentation.png) |

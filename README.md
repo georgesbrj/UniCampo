@@ -172,7 +172,7 @@ http://localhost:8000/api/documentation
 
 
 ## Intefaces 
-![home](https://github.com/georgesbrj/UniCampo/backend/public/images/home.png)
-![cadastrar](https://github.com/georgesbrj/UniCampo/backend/public/images/cadastar.png)
-![edit](https://github.com/georgesbrj/UniCampo/backend/public/images/edit.png)
-![Documentacao](https://github.com/georgesbrj/UniCampo/backend/public/images/documentation.png)
+![home](https://github.com/georgesbrj/blob/UniCampo/backend/public/images/home.png)
+![cadastrar](https://github.com/georgesbrj/blob/UniCampo/backend/public/images/cadastar.png)
+![edit](https://github.com/georgesbrj/blob/UniCampo/backend/public/images/edit.png)
+![Documentacao](https://github.com/georgesbrj/blob/UniCampo/backend/public/images/documentation.png)

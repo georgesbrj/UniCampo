@@ -63,7 +63,15 @@ cd seu-repositorio
 
 Caso esteja utilizando Docker:
 ```
-1-renomei o arquivo .env.example para .env 
+1-renomei o arquivo .env.example para .env  
+
+2-Configure os dados do banco 
+    DB_CONNECTION=mysql
+    DB_HOST=db
+    DB_PORT=3306
+    DB_DATABASE=unicampo
+    DB_USERNAME=root
+    DB_PASSWORD=root
 
 1-Rode o comando na pasta raiz do projeto => docker-compose up --build
 
@@ -73,13 +81,15 @@ Caso esteja utilizando Docker:
 
 4-Rode o comando => composer install
 
-5-Rodar migrations e seeders => php artisan migrate --seed
+5-Gerado a chave laravel => php artisan key:generate
 
-6-Acesso a documentação do projeto http://localhost:8000/api/documentation#/
+6-Rodar migrations e seeders => php artisan migrate --seed
 
-7-Caso não tenha gerado a chave laravel => php artisan key:generate
+7-Acesso a documentação do projeto http://localhost:8000/api/documentation#/
 
-7-Rode o comando docker-compose down => Finaliza todos os containers 
+
+
+7-Rode o comando docker-compose down  => Finaliza todos os containers 
 ```
 
 ## 🧪 Testes  

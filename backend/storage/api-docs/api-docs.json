@@ -1,0 +1,325 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Gerenciamento de Clientes - UNICAMPO",
+        "description": "Documentação da API desenvolvida para a avaliação técnica da UNICAMPO.",
+        "contact": {
+            "name": "George Bezerra"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/clientes": {
+            "get": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Listar clientes com filtros e paginação",
+                "operationId": "f8eafbc2e9500413091c7f84a4470b84",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Filtrar por status (ativo/inativo)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Buscar por nome, email ou CPF/CNPJ",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de clientes"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Criar um novo cliente",
+                "operationId": "2a8a28c7aec782e1af95193a65053e68",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cliente"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Cliente criado com sucesso"
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            }
+        },
+        "/api/clientes/{id}": {
+            "get": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Buscar detalhes de um cliente",
+                "operationId": "7be647ff4c2ab71c5a1f042133b13428",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dados do cliente"
+                    },
+                    "404": {
+                        "description": "Cliente não encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Atualizar um cliente existente",
+                "operationId": "1cc735d14964cb4b25557d546e807a9c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cliente"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cliente atualizado com sucesso"
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Excluir um cliente",
+                "operationId": "fae533cf0841c3ece1414287d89ef42b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cliente excluído com sucesso"
+                    },
+                    "404": {
+                        "description": "Cliente não encontrado"
+                    }
+                }
+            }
+        },
+        "/api/professions": {
+            "get": {
+                "tags": [
+                    "Profissões"
+                ],
+                "summary": "Listar profissões disponíveis",
+                "operationId": "5997e9926da7451dd221a14f1348711e",
+                "responses": {
+                    "200": {
+                        "description": "Lista de profissões"
+                    }
+                }
+            }
+        },
+        "/api/clientes/search": {
+            "get": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Buscar clientes por nome, email ou CPF/CNPJ",
+                "operationId": "fb56a1e0a20df7f26d4070b610de26fa",
+                "parameters": [
+                    {
+                        "name": "nome",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cpf_cnpj",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de clientes filtrada"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cliente": {
+                "required": [
+                    "nome",
+                    "data_nascimento",
+                    "tipo_pessoa",
+                    "cpf_cnpj",
+                    "email",
+                    "telefone",
+                    "endereco",
+                    "id_profissao",
+                    "status"
+                ],
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "data_nascimento": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "tipo_pessoa": {
+                        "type": "string",
+                        "enum": [
+                            "física",
+                            "jurídica"
+                        ]
+                    },
+                    "cpf_cnpj": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "telefone": {
+                        "type": "string"
+                    },
+                    "endereco": {
+                        "$ref": "#/components/schemas/Endereco"
+                    },
+                    "id_profissao": {
+                        "type": "integer"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "ativo",
+                            "inativo"
+                        ]
+                    }
+                },
+                "type": "object"
+            },
+            "Endereco": {
+                "required": [
+                    "endereco",
+                    "numero",
+                    "bairro",
+                    "cidade",
+                    "uf"
+                ],
+                "properties": {
+                    "endereco": {
+                        "type": "string"
+                    },
+                    "numero": {
+                        "type": "string"
+                    },
+                    "bairro": {
+                        "type": "string"
+                    },
+                    "cidade": {
+                        "type": "string"
+                    },
+                    "uf": {
+                        "type": "string",
+                        "maxLength": 2
+                    },
+                    "complemento": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Profissao": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "nome_profissao": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Clientes",
+            "description": "Clientes"
+        },
+        {
+            "name": "Profissões",
+            "description": "Profissões"
+        }
+    ]
+}
